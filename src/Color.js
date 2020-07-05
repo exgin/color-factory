@@ -6,6 +6,7 @@ const Color = ({ colorName, colorValue }) => {
 
   return (
     <div className='Color' style={{ backgroundColor: colorValue }}>
+      <p>test {colorName} {colorValue}</p>
       <h2>I am {color}</h2>
       <NavLink to='/colors'>Go back home</NavLink>
     </div>
