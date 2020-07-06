@@ -5,13 +5,6 @@ import NewColorForm from './NewColorForm';
 import NavBar from './NavBar';
 import Color from './Color';
 
-// TODO
-// 1. the color's name isnt being displayed after submitting NewColorForm
-// NOTES-- it may have to do with the ColorList -> look at object keys to see what the key is | AKA the 'colorName', similar
-// ... to the INIT_STATE in the Routes componenet
-
-// COULD have something to do with the formData, maybe there's two thing to pull out
-
 const Routes = () => {
   // we can define functions in here & pass it down to our componenets
   const INIT_STATE = { red: '#FF0000', green: '#00FF00', blue: '#0000FF' };
