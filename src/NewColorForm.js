@@ -6,7 +6,7 @@ const NewColorForm = ({ addColor }) => {
 
   const INIT_STATE = {
     colorName: '',
-    colorValue: '',
+    colorValue: '#ffffff',
   };
 
   const [formData, setFormData] = useState(INIT_STATE);

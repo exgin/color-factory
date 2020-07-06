@@ -20,12 +20,12 @@ const Routes = () => {
 
   //   needs to passed to the newColorForm
   const addColor = (newColor) => {
-    setColors((colors) => ({ ...colors, ...newColor }));
+    setColors((clr) => ({ ...clr, ...newColor }));
   };
 
   const renderingColor = (props) => {
     const { color } = props.match.params; // can use this instead of useParams()
-    const colorValue = colors[colorValue];
+    const colorValue = colors[color]; // allows us to finally use the color's value in the style
     return <Color {...props} colorValue={colorValue} colorName={color} />;
   };
 
