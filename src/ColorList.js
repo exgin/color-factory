@@ -10,8 +10,6 @@ const ColorList = ({ colors }) => {
     </li>
   ));
 
-  console.log(allColors);
-
   return (
     <div className='ColorList'>
       <h1 className='ColorList-title'>Welcome to the color factory</h1>

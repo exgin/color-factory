@@ -6,7 +6,7 @@ const NewColorForm = ({ addColor }) => {
 
   const INIT_STATE = {
     colorName: '',
-    colorValue: '#ffffff',
+    colorValue: '',
   };
 
   const [formData, setFormData] = useState(INIT_STATE);
@@ -16,8 +16,10 @@ const NewColorForm = ({ addColor }) => {
     setFormData((formData) => ({ ...formData, [name]: value }));
   };
 
-  const handleSubmit = () => {
-    addColor({ ...formData });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // addColor({ ...formData }); | ERROR, this adds both colorName & colorValue separately
+    addColor({ [formData.colorName]: formData.colorValue }); // FIX, this combines both colorName & colorValue into one
     setFormData(INIT_STATE);
     history.push('/colors');
   };

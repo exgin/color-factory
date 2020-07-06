@@ -25,8 +25,10 @@ const Routes = () => {
 
   const renderingColor = (props) => {
     const { color } = props.match.params; // can use this instead of useParams()
-    const colorValue = colors[color]; // allows us to finally use the color's value in the style
-    return <Color {...props} colorValue={colorValue} colorName={color} />;
+    const colorValue = colors[color]; // get the color's value
+    console.log(colors);
+
+    return <Color colorValue={colorValue} colorName={color} />;
   };
 
   return (

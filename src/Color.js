@@ -1,13 +1,11 @@
 import React from 'react';
-import { useParams, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Color = ({ colorName, colorValue }) => {
-  const { color } = useParams();
-
   return (
     <div className='Color' style={{ backgroundColor: colorValue }}>
-      <p>test {colorName} {colorValue}</p>
-      <h2>I am {color}</h2>
+      <h2>I am {colorName}</h2>
+      <p>My value is {colorValue}</p>
       <NavLink to='/colors'>Go back home</NavLink>
     </div>
   );
