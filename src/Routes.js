@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import ColorList from './ColorList';
 import NewColorForm from './NewColorForm';
@@ -7,9 +7,14 @@ import Color from './Color';
 
 const Routes = () => {
   // we can define functions in here & pass it down to our componenets
-  const INIT_STATE = { red: '#FF0000', green: '#00FF00', blue: '#0000FF' };
+  // localStorage -> look for key of colors, if none, use our default
+  const INIT_STATE = JSON.parse(localStorage.getItem('colors')) || { red: '#FF0000', green: '#00FF00', blue: '#0000FF' };
 
   const [colors, setColors] = useState(INIT_STATE);
+
+  useEffect(() => {
+    localStorage.setItem('colors', JSON.stringify(colors));
+  }, [colors]); // re-render when the state var colors is updated
 
   //   needs to passed to the newColorForm
   const addColor = (newColor) => {
